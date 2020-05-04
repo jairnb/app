@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://damp-temple-00484.herokuapp.com'),
+    'url' => env('APP_URL', 'APP_URL=https://damp-temple-00484.herokuapp.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
