@@ -1,0 +1,26 @@
+
+
+.navbar {
+  background: transparent;
+}
+.navbar .nav-item .nav-link {
+    font-size: 17px;
+    padding-right: 1.4rem;
+    font-family: arial;
+    color: #000000;
+}
+
+.bghide{
+    background-image: none;
+    margin: 0;
+    padding: 0;
+}
+#featureImg {
+    width: 100%;
+    height: auto;
+}
+
+
+footer {
+    background-color: #000066;
+}

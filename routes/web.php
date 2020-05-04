@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index')->name('main');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/test', function () {
+Route::get('/dashboard', function () {
     return view('admin.dashboard');
-});
+})->middleware('auth');
 
 Route::resource('posts', 'PostController');
+
+Route::group(['middleware' => 'auth'], function () {
+
+});
