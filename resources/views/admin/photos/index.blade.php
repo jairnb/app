@@ -14,7 +14,7 @@
 
 
 @isset($image->name)
-    <img id="featureImg" src="{{asset('img/'.$image->name)}}">
+    <img id="featureImg" src="{{asset('img/'.$image->name)}}" height="500", width="500">
 @endisset
 
      <form action="{{ route('images.store') }}" method="post" enctype="multipart/form-data">
