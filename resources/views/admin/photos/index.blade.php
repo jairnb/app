@@ -13,7 +13,9 @@
 @endif
 
 
-<img src="{{asset('storage/'.$image->name)}}" alt="teste" height="200" width="200">
+@isset($image->name)
+    <img id="featureImg" src="{{asset('storage/'.$image->name)}}">
+@endisset
 
      <form action="{{ route('images.store') }}" method="post" enctype="multipart/form-data">
             @csrf

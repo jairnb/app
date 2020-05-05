@@ -2,7 +2,9 @@
 
 @section('content')
         <div class="bghide">
-            <img id="featureImg" src="{{asset('storage/'.$image->name)}}">
+            @isset($image->name)
+                <img id="featureImg" src="{{asset('storage/'.$image->name)}}">
+            @endisset
         </div>
 
         <div class="container">
