@@ -14,7 +14,7 @@
                     {!! $post->body !!}
                 </p>
             @empty
-                Hello
+
             @endforelse
 
         </div>
