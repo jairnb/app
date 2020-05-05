@@ -46,7 +46,8 @@ class ImageController extends Controller
             $data['name'] = $nameImage;
             $data['uuid'] = Str::uuid();
 
-            $upload = $request->name->storeAs('', $nameImage);
+            $upload = request()->name->move(public_path('img'), $nameImage);
+            // $upload = $request->name->storeAs('', $nameImage);
 
             if (!$upload) {
                 return redirect()->back()->with('errors', ['Error']);

@@ -3,7 +3,7 @@
 @section('content')
         <div class="bghide">
             @isset($image->name)
-                <img id="featureImg" src="{{url('storage/'.$image->name)}}">
+                <img id="featureImg" src="{{asset('img/'.$image->name)}}">
             @endisset
         </div>
 
