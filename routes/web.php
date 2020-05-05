@@ -17,14 +17,14 @@ Route::get('/', 'SiteController@index')->name('main');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware('auth');
 
-Route::resource('posts', 'PostController');
+
 
 Route::group(['middleware' => 'auth'], function () {
-
+    Route::resource('posts', 'PostController');
 });

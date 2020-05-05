@@ -58,9 +58,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -72,7 +74,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+
+        $post->update($request->all());
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -83,6 +87,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 }

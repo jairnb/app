@@ -23,4 +23,48 @@
 
 footer {
     background-color: #000066;
+    padding: 2% 5% 2% 5%;
+    font-size: 13px;
+}
+
+#footer {
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+#socialicons {
+    text-align: center;
+    float: right;
+    display: inline-block;
+}
+
+a.social, a.social1 {
+    color: #FFFFFF!important;
+}
+
+
+a.social, a.social1 {
+    color: #FFFFFF!important;
+}
+a.social {
+    font-family: 'SocialicoRegular';
+    font-size: 28px;
+    margin: 0 10px 0px 10px;
+    position: relative;
+    display: inline-block;
+    -webkit-transition: all 450ms;
+    -moz-transition: all 450ms;
+    -ms-transition: all 450ms;
+    -o-transition: all 450ms;
+    transition: all 450ms;
+}
+
+.fa {
+  width: 30px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+#container a, #footer a {
+    color: #FF6600;
 }

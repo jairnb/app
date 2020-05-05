@@ -12,8 +12,8 @@
 
     <div id="socialicons">
         <div id="socialicons1"></div>
-        <a class="social" href="https://www.facebook.com/bemoacademicconsulting">F</a>
-        <a class="social" href="https://twitter.com/BeMo_AC">L</a>
+        <a class="fa fa-facebook" href="https://www.facebook.com/bemoacademicconsulting"></a>
+        <a class="fa fa-twitter" href="https://twitter.com/BeMo_AC"></a>
     </div>
 
 </footer>
