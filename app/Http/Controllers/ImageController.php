@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ImageController extends Controller
 {
@@ -14,7 +15,9 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $image = Image::latest()->first();
+
+        return view('admin.photos.index', compact('image'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,8 +38,27 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        if ($request->hasFile('name') && $request->file('name')->isValid()) {
+            $extension = $request->name->extension();
+            $nameImage = "{$request->file('name')->getClientOriginalName()}";
+            $data['name'] = $nameImage;
+            $data['uuid'] = Str::uuid();
+
+            $upload = $request->name->storeAs('', $nameImage);
+
+            if (!$upload) {
+                return redirect()->back()->with('errors', ['Error']);
+            }
+        }
+
+        Image::create($data);
+
+        return redirect()->route('images.index');
+
     }
+
 
     /**
      * Display the specified resource.

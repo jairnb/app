@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="bghide">
-            <img id="featureImg" src="{{asset('img/cda-interview-guide.jpg')}}">
+            <img id="featureImg" src="{{asset('storage/'.$image->name)}}">
         </div>
 
         <div class="container">

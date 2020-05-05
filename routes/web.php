@@ -27,4 +27,5 @@ Route::get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('posts', 'PostController');
+    Route::resource('images', 'ImageController');
 });

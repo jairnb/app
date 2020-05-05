@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class SiteController extends Controller
      */
     public function index()
     {
+        $image = Image::latest()->first();
         $posts = Post::all();
-        return view('site.home', compact('posts'));
+        return view('site.home', compact('posts', 'image'));
     }
 
     /**
