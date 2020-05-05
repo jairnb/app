@@ -68,3 +68,7 @@ a.social {
 #container a, #footer a {
     color: #FF6600;
 }
+
+textarea {
+  height:100px
+}

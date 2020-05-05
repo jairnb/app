@@ -29,19 +29,19 @@
                   <tbody>
                       @forelse ($posts as $post)
                         <tr>
-                            <td>{{$post->title}}</td>
-                            <td>{{$post->body}}</td>
+                            <td>{!! $post->title !!}</td>
+                            <td>{!! $post->body !!}</td>
                             <td>
                             <a href="{{url('posts/'.$post->id.'/edit')}}" class="btn btn-info btn-circle"><i class="fa fa-pen"></i></a>
 
-                            <form action="{{ url('posts/'.$post->id)}}" class="pull-right" method="post">
+                            <form action="{{ url('posts/'.$post->id)}}" method="post">
                                 {{csrf_field()}}
                                 {{ method_field('DELETE') }}
                                 <button type="submit" class="btn btn-danger btn-circle">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
-                        </td>
+                            </td>
                         </tr>
                       @empty
                       <tr>

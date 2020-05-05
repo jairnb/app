@@ -12,7 +12,7 @@
 
                 <div class="form-group">
                     <label for="body">Body</label>
-                    <textarea class="form-control" name="body" id="body" cols="30" rows="10" placeholder="Body..."></textarea>
+                    <textarea class="form-control" name="body" id="editor" cols="30" rows="10" placeholder="Body..."></textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Save</button>
@@ -21,3 +21,16 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+    </script>
+@endpush
